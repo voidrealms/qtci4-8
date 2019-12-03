@@ -43,12 +43,22 @@ void readFile(QString path) {
 
     qInfo() << "Banner: " << banner;
 
+    while (!stream.atEnd()) {
+        //qint32 num;
+        QString num;
+        stream >> num;
+        if(!num.isEmpty()) qInfo() << "Random: " << num;
+    }
+
+    /*
     for(int i = 0; i < 5; i++) {
        //qint32 num;
        QString num;
        stream >> num;
        qInfo() << "Random: " << num;
+
     }
+     */
 
     file.close();
 }
